@@ -30,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function(){  // handlePageLoad()
     // we need an eventListener
 
 
+
+
+    const allThePokes = []
+
     const form1 = document.querySelector(".form1")
           console.log(form1)
           
@@ -54,10 +58,34 @@ document.addEventListener("DOMContentLoaded", function(){  // handlePageLoad()
                }
                console.log(newPokemon)
 
+               allThePokes.push(newPokemon)
+
+                 mapTheTing(allThePokes)
+                 forEachTheTing(allThePokes)
+                  // console.log(allThePokes)
+
                // put in array *****
 
             
             })
+
+            function mapTheTing(arrayToMap){ console.log(arrayToMap)
+
+                  // let newArray = arrayToMap.map(objInArray =>{ console.log(objInArray) })
+                  //       console.log(newArray)
+                  
+                  //     newArray = arrayToMap.map(objInArray => objInArray.nameForNewPoke )
+                  //       console.log(newArray)
+
+            }
+            const forEachTheTing=(arrayToForEach)=>{ console.log(arrayToForEach)
+
+                  arrayToForEach.forEach(     (objInArray) => { console.log(objInArray) }     )
+
+                  arrayToForEach.forEach(console.log)
+
+
+            }
 
       //     form1.addEventListener("click", (event)=>{  event.preventDefault()
       //           console.log("CLICK EVENT:  ", event.target) })
