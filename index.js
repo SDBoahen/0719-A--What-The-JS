@@ -1,4 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function(){  // handlePageLoad()
+document.addEventListener("DOMContentLoaded", function(){  // handlePageLoad()
 
 
     document.addEventListener("click", 
@@ -6,15 +6,15 @@
      // Remember, this a Function - A Callback Function
      (event)=>{ 
          
-        console.log("THIS IS THE WHOLE EVENT OBJECT 👉{🧶} ", event) 
+      //   console.log("THIS IS THE WHOLE EVENT OBJECT USING JUST (event) 👉{🧶} ", event) 
         
-        console.log("💻🔬👀:: You Just Clicked On This With (event.target) == ", event.target) 
+      //   console.log("💻🔬👀:: You Just Clicked On This With (event.target) == ", event.target) 
             // console.log(`💻🔬👀:: You Just Clicked On  ${event.target}  With (event.target) `) 
             ////  Remember! Interpolation Gives Us JavaScript Notation (An Object)
         
-        console.log("💻🔬👀:: What's In There With (textContent) 👉  ", event.target.textContent) 
-        console.log("💻🔬👀:: What's In There With (innerText) 👉  ", event.target.innerText) 
-        console.log("💻🔬👀:: What's In There With (innerHTML) 👉  ", event.target.innerHTML) 
+      //   console.log("💻🔬👀:: What's In There With (textContent) 👉  ", event.target.textContent) 
+      //   console.log("💻🔬👀:: What's In There With (innerText) 👉  ", event.target.innerText) 
+      //   console.log("💻🔬👀:: What's In There With (innerHTML) 👉  ", event.target.innerHTML) 
 
     }  )
     ////  'Listen To TheDOM🌌🧘🌠👁✨'
@@ -22,93 +22,154 @@
 
 
 
-    const divWithTheMudkip = document.querySelector("div")
-        // "A Puppet String", As Sam Would Say 🙆🏾‍♂️
-          console.log(divWithTheMudkip)
-        //   divWithTheMudkip.textContent = "What Ever We Want To Change It To"
-        //   divWithTheMudkip.innerText = "What Ever We Want To Change It To"
-        //   divWithTheMudkip.innerHTML = "What Ever We Want To Change It To"
+    const submitOnForm1 = document.querySelector("#submit1")
+    //const submitOnForm1 = document.getElementById("submit1")
+    //const submitOnForm1 = document.querySelector("input#submit1")
+          console.log(submitOnForm1)
+
+    // we need an eventListener
 
 
-        // divWithTheMudkip.textContent = '<img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />'
-        // divWithTheMudkip.innerText = '<img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />'
+    const form1 = document.querySelector(".form1")
+          console.log(form1)
           
-        // divWithTheMudkip.innerHTML = '<img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />'
-        // divWithTheMudkip.innerHTML = `<img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />`
+         form1.addEventListener("submit", (event)=>{  event.preventDefault()
+               console.log("SUBMIT EVENT:  ", event.target)
 
 
-    //X// A NO-GO
-    // const theActualMudkip = divWithTheMudkip
-    //       console.log(theActualMudkip)
+               console.log("IN NAME FIELD:  ", event.target.name) 
+               console.log("IN NAME FIELD:  ", event.target.name.value)
+               let pokemonName = event.target.name.value 
+            
+               console.log("IN POKEMONTYPE FIELD:  ", event.target.pokemonType) 
+               console.log("IN POKEMONTYPE FIELD:  ", event.target.pokemonType.value)
+               let pokemonType = event.target.pokemonType.value
+               
+               
+               let newPokemon ={
 
-    const theActualMudkip = document.querySelector("img")
-          theActualMudkip.id = "mudkip"
-          console.log(theActualMudkip)
+                  nameForNewPoke: pokemonName,
+                  pokemonTypeForNewPoke: pokemonType
 
+               }
+               console.log(newPokemon)
 
+               // put in array *****
 
-          const theActualMudkipQ = divWithTheMudkip.querySelector("img")
-                console.log(theActualMudkipQ)
+            
+            })
 
-
-
-          const theActualMudkipQID = document.querySelector("#mudkip")
-                console.log(theActualMudkipQID)
-          const theActualMudkipGID = document.getElementById("mudkip")
-                console.log(theActualMudkipGID)
-
-                //X// A NO-GO
-                // const theActualMudkipQIDOffOfDiv = divWithTheMudkip.getElementById("mudkip")
-                // console.log(theActualMudkipQIDOffOfDiv)
-
-
-
-
-        const newImage = document.createElement("img")
-              newImage.src = "https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png"
-        console.log(newImage)
-        //X// A NO-GO
-        // newImage.innerHTML = "https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png"
-        // newImage.textContent = "https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png"
-
-        divWithTheMudkip.append(newImage)
+      //     form1.addEventListener("click", (event)=>{  event.preventDefault()
+      //           console.log("CLICK EVENT:  ", event.target) })
+      //       //     will need event.preventDefault()
 
 
-        const newImage2 = document.createElement("img")
-              newImage2.src = "https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png"
-        console.log(newImage2)
-
-        const secondAppendDiv = document.querySelector("#second-append-div")
-              console.log(secondAppendDiv)
-        secondAppendDiv.append(newImage2)
+    
 
 
-        // SHOW THIS WITH A LOOP - PROPPER - USNG CREATE
-        secondAppendDiv.innerHTML = `
-                <div>
-                <h3> WOWZERZ </h3>
-                <img src="https://cdn.vox-cdn.com/thumbor/8pj1jFOwIyYzITqZh37m8C0Zm2U=/1400x788/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/7997669/Birch_Mudkip.png" alt="">
-                <h3> YAY </h3>
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <button> CATCH </button>
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
-                </div>
-        `
+
+
+
+
+
+
+
+
+
+
+
+
+
+//// From Sunday 7-25-2021 
+
+
+//     const divWithTheMudkip = document.querySelector("div")
+//         // "A Puppet String", As Sam Would Say 🙆🏾‍♂️
+//           console.log(divWithTheMudkip)
+//         //   divWithTheMudkip.textContent = "What Ever We Want To Change It To"
+//         //   divWithTheMudkip.innerText = "What Ever We Want To Change It To"
+//         //   divWithTheMudkip.innerHTML = "What Ever We Want To Change It To"
+
+
+//         // divWithTheMudkip.textContent = '<img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />'
+//         // divWithTheMudkip.innerText = '<img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />'
+          
+//         // divWithTheMudkip.innerHTML = '<img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />'
+//         // divWithTheMudkip.innerHTML = `<img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />`
+
+
+//     //X// A NO-GO
+//     // const theActualMudkip = divWithTheMudkip
+//     //       console.log(theActualMudkip)
+
+//     const theActualMudkip = document.querySelector("img")
+//           theActualMudkip.id = "mudkip"
+//           console.log(theActualMudkip)
+
+
+
+//           const theActualMudkipQ = divWithTheMudkip.querySelector("img")
+//                 console.log(theActualMudkipQ)
+
+
+
+//           const theActualMudkipQID = document.querySelector("#mudkip")
+//                 console.log(theActualMudkipQID)
+//           const theActualMudkipGID = document.getElementById("mudkip")
+//                 console.log(theActualMudkipGID)
+
+//                 //X// A NO-GO
+//                 // const theActualMudkipQIDOffOfDiv = divWithTheMudkip.getElementById("mudkip")
+//                 // console.log(theActualMudkipQIDOffOfDiv)
+
+
+
+
+//         const newImage = document.createElement("img")
+//               newImage.src = "https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png"
+//         console.log(newImage)
+//         //X// A NO-GO
+//         // newImage.innerHTML = "https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png"
+//         // newImage.textContent = "https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png"
+
+//         divWithTheMudkip.append(newImage)
+
+
+//         const newImage2 = document.createElement("img")
+//               newImage2.src = "https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png"
+//         console.log(newImage2)
+
+//         const secondAppendDiv = document.querySelector("#second-append-div")
+//               console.log(secondAppendDiv)
+//         secondAppendDiv.append(newImage2)
+
+
+//         // SHOW THIS WITH A LOOP - PROPPER - USNG CREATE
+//         secondAppendDiv.innerHTML = `
+//                 <div>
+//                 <h3> WOWZERZ </h3>
+//                 <img src="https://cdn.vox-cdn.com/thumbor/8pj1jFOwIyYzITqZh37m8C0Zm2U=/1400x788/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/7997669/Birch_Mudkip.png" alt="">
+//                 <h3> YAY </h3>
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <button> CATCH </button>
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 <img src="https://cdn2.bulbagarden.net/upload/thumb/d/d6/May_Torchic.png/250px-May_Torchic.png" />
+//                 </div>
+//         `
 
 
 
@@ -129,6 +190,10 @@
 
 
 
+
+
+
+//// FROM FRIDAY  7-23-2021 
 
 
     // console.log("Something!")
@@ -226,5 +291,9 @@
 
 
 
-// })
+})
+
+
+
+
 
